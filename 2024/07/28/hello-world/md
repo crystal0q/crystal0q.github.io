@@ -1,0 +1,61 @@
+---
+title: 关于typora插入图片之后博客无法显示的问题
+top_img: https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg
+cover: https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg
+date: 2024-07-29 16:43:09
+tags:
+typora-root-url: ..
+---
+
+# 解决无法插入图片的方案
+
+不知道为什么，网上别人插入图片的方法总是不可行。经过一系列的探索，我发现解决的方案：
+
+- 在`source`下建立名为`imgs`的文件夹
+
+- 打开typora->文件->偏好设置->复制到指定路径
+
+```
+../../dource/imgs/${fiilename}
+```
+
+- 下面的选项全选
+
+  ---
+
+**以上内容，下次登陆无需更改**。
+
+- 新建一个md文件
+
+- typora->图像->设置根目录，选择`source`作为根目录
+
+- 此时文章顶部出现`typora-root-url: ..`
+
+- 把图片放入`images`
+
+- 打开typora->格式->图像->插入图片
+
+- ctrl+s
+
+接着`hexo c`
+
+`hexo g`
+
+`hexo d`
+
+![](/imgs/$%7Bfiilrname%7D/sucai-17222451736271.jpg)
+
+# 另：butterfly主题下文章封面插入tips:
+
+只需要在文章首部`title`下行加上如下代码即可：
+
+```markdown
+top_img: https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg
+cover: https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg
+```
+
+## 附加
+
+自用壁纸网站：[免费的桌面壁纸，图片和高清背景图片| Wallspic](https://wallspic.com/cn)
+
+自用生成URL：[图像至链接转化：在线利器 (gptkong.com)](https://www.gptkong.com/tools/image_to_link)
