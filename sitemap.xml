@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://crystal0q.github.io/2025/01/15/paper/</loc>
+    <loc>https://crystal0q.github.io/2025/01/15/note/</loc>
     
     <lastmod>2025-01-15</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://crystal0q.github.io/2025/01/15/RTL,FT,SUV,FPV%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
+    <loc>https://crystal0q.github.io/2025/01/15/RTL-FT-SUV-FPV%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
     
     <lastmod>2025-01-15</lastmod>
     
@@ -378,6 +378,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://crystal0q.github.io/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crystal0q.github.io/tags/EDA/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -431,6 +445,13 @@
   
   <url>
     <loc>https://crystal0q.github.io/categories/hobby-meditation/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crystal0q.github.io/categories/%E7%A0%94%E7%A9%B6%E7%94%9F/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
