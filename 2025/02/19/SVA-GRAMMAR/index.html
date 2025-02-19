@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SVA-GRAMMAR | kiki妙妙屋</title><meta name="author" content="Kiki Joe"><meta name="copyright" content="Kiki Joe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="SVA的位置在.v文件中 module ABC(); 	rtl代码 	SVA断言 end mudule  断言的格式 断言1 assert property(事件1) 	$display(&quot;......&quot;,$time); else 	$display(&quot;.......&quot;,$time);  断言2 assert property(事件2) 	$display(&quot;......&quot;,$time); els">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVA-GRAMMAR">
+<meta property="og:url" content="https://crystal0q.github.io/2025/02/19/SVA-GRAMMAR/index.html">
+<meta property="og:site_name" content="kiki妙妙屋">
+<meta property="og:description" content="SVA的位置在.v文件中 module ABC(); 	rtl代码 	SVA断言 end mudule  断言的格式 断言1 assert property(事件1) 	$display(&quot;......&quot;,$time); else 	$display(&quot;.......&quot;,$time);  断言2 assert property(事件2) 	$display(&quot;......&quot;,$time); els">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg">
+<meta property="article:published_time" content="2025-02-19T07:54:43.000Z">
+<meta property="article:modified_time" content="2025-02-19T07:56:16.336Z">
+<meta property="article:author" content="Kiki Joe">
+<meta property="article:tag" content="研究生">
+<meta property="article:tag" content="EDA">
+<meta property="article:tag" content="SVA语法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg"><link rel="shortcut icon" href="/img/%E5%8F%AF%E7%88%B1.png"><link rel="canonical" href="https://crystal0q.github.io/2025/02/19/SVA-GRAMMAR/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-ZMbdJvPTf2"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SVA-GRAMMAR',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-19 15:56:16'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="kiki妙妙屋"><span class="site-name">kiki妙妙屋</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SVA-GRAMMAR</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-19T07:54:43.000Z" title="发表于 2025-02-19 15:54:43">2025-02-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-19T07:56:16.336Z" title="更新于 2025-02-19 15:56:16">2025-02-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A0%94%E7%A9%B6%E7%94%9F/">研究生</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SVA-GRAMMAR"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="SVA的位置"><a href="#SVA的位置" class="headerlink" title="SVA的位置"></a>SVA的位置</h2><p>在<code>.v</code>文件中</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> <span class="token function">ABC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	rtl代码
+	SVA断言
+<span class="token keyword">end</span> mudule</code></pre>
+
+<h2 id="断言的格式"><a href="#断言的格式" class="headerlink" title="断言的格式"></a>断言的格式</h2><ul>
+<li><p>断言1</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">assert</span> <span class="token function">property</span><span class="token punctuation">(</span>事件<span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token kernel-function property">$display</span><span class="token punctuation">(</span><span class="token string">"......"</span><span class="token punctuation">,</span><span class="token kernel-function property">$time</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span>
+	<span class="token kernel-function property">$display</span><span class="token punctuation">(</span><span class="token string">"......."</span><span class="token punctuation">,</span><span class="token kernel-function property">$time</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>断言2</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">assert</span> <span class="token function">property</span><span class="token punctuation">(</span>事件<span class="token number">2</span><span class="token punctuation">)</span>
+	<span class="token kernel-function property">$display</span><span class="token punctuation">(</span><span class="token string">"......"</span><span class="token punctuation">,</span><span class="token kernel-function property">$time</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span>
+	<span class="token kernel-function property">$display</span><span class="token punctuation">(</span><span class="token string">"......."</span><span class="token punctuation">,</span><span class="token kernel-function property">$time</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+</ul>
+<p>含义：断定”事件1”和“事件2”会发生，如果发生了，记作pass，否则记作fail</p>
+<ul>
+<li><p>事件1和事件2的两种书写格式</p>
+<ul>
+<li><p>序列块</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">sequence</span> name<span class="token punctuation">;</span><span class="token comment">//常用于组合逻辑断言</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">endsequence</span></code></pre>
+</li>
+<li><p>属性块</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">property</span> name<span class="token punctuation">;</span><span class="token comment">//常用于有时间观念的断言，可用于调用sequence</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
+<span class="token keyword">endproperty</span></code></pre>
+</li>
+<li><p>调用sequence或者property</p>
+<pre class="language-velocity" data-language="velocity"><code class="language-velocity">assert property(name)</code></pre>
+</li>
+<li><p>带参数的<code>property</code>,<code>sequrnce</code></p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">assert</span> <span class="token function">property</span><span class="token punctuation">(</span><span class="token function">p1</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//调用的property带参数</span>
+
+<span class="token keyword">sequence</span> s1<span class="token punctuation">;</span><span class="token comment">//被主sequence调用的sequence带参数</span>
+	<span class="token function">s2</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">endsequence</span></code></pre>
+</li>
+<li><p><code>property</code>内部定义局部变量</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">property</span> p1<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> cnt<span class="token punctuation">;</span>
+	<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token keyword">endproperty</span></code></pre></li>
+</ul>
+</li>
+</ul>
+<p>注：断言的一般格式</p>
+<ul>
+<li>通常基于时序逻辑，组合逻辑少见</li>
+<li>一般规则<code>time+event</code>，如<code>时钟上升沿+发生某事</code>或者<code>信号下降+发生某事</code></li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="语法1：信号（事件）之间的组合逻辑关系"><a href="#语法1：信号（事件）之间的组合逻辑关系" class="headerlink" title="语法1：信号（事件）之间的组合逻辑关系"></a>语法1：信号（事件）之间的组合逻辑关系</h3><ul>
+<li>常见的有：&amp;&amp;，||，！，^</li>
+<li><code>firstmatch(a||b)</code>：从左到右检查第一个匹配的序列，如果a和b都匹配，优先选择a作为匹配结果</li>
+<li><code>a?b:c</code>：a事件成功后，触发b，a不成功则触发c</li>
+</ul>
+<h3 id="语法2：在“时序逻辑”中判断独立的一根信号的行为"><a href="#语法2：在“时序逻辑”中判断独立的一根信号的行为" class="headerlink" title="语法2：在“时序逻辑”中判断独立的一根信号的行为"></a>语法2：在“时序逻辑”中判断独立的一根信号的行为</h3><pre class="language-verilog" data-language="verilog"><code class="language-verilog">@<span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> A事件；<span class="token comment">//当clk上升沿时，如果发生A事件，断言将会报警（即断言失败）</span>
+
+<span class="token comment">//边沿触发内置函数：</span>
+<span class="token kernel-function property">$rose</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//信号上升，即如果信号a从0变为1，$rose(a)返回值为1，否则为0</span>
+<span class="token kernel-function property">$fell</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//信号下降，即信号a从1变为0时，$fell(a) 的返回值为1，否则为0</span>
+<span class="token kernel-function property">$stable</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//信号值不变,即如果信号a在当前时钟周期和上一个时钟周期的值相同，$stable(a)的返回值为1，否则为0</span></code></pre>
+
+<h3 id="语法3：在“时序逻辑”中判断多个事件-信号的行为关系"><a href="#语法3：在“时序逻辑”中判断多个事件-信号的行为关系" class="headerlink" title="语法3：在“时序逻辑”中判断多个事件&#x2F;信号的行为关系"></a>语法3：在“时序逻辑”中判断多个事件&#x2F;信号的行为关系</h3><pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token function">intersect</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token comment">//断定a和b两个事件同时发生且同时结束</span>
+
+a <span class="token keyword">within</span> b<span class="token comment">//断定b事件的发生的时间段里包含a事件发生的时间段</span>
+
+a <span class="token number">##2</span> b<span class="token comment">//断定a事件发生后2个单位时间内b事件一定会发生</span>
+
+a ##<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token comment">//断定a事件发生后1~3个单位时间内b事件一定会发生</span>
+
+a ##<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">:</span>$<span class="token punctuation">]</span><span class="token comment">//断定a事件发生后3个周期内b事件一定会发生</span>
+
+c <span class="token function">throughout</span><span class="token punctuation">(</span>a#<span class="token number">#2</span> b<span class="token punctuation">)</span><span class="token comment">//断定a事件成到b事件成立的过程中,c事件一直成立</span>
+
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a<span class="token operator">|-></span>b<span class="token comment">//断定clk上升沿后，a事件“开始发生”，同时，b事件发生</span>
+
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a <span class="token keyword">end</span><span class="token operator">|-></span>b<span class="token comment">//断定clk上升沿后，a事件执行了一段实践结束后，同时，b事件发生</span>
+
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a<span class="token operator">-=></span>b<span class="token comment">//断定clk上升沿后，a事件开始发生，下一个时钟沿后，b事件开始发生</span>
+
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a<span class="token operator">-=></span><span class="token number">##2</span>b<span class="token comment">//断定clk上升沿后，a事件开始发生，下三个时钟沿后，b事件开始发生</span>
+
+@（<span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token kernel-function property">$past</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">==</span> <span class="token number">1</span>`b1<span class="token comment">//断定a信号在2个时钟周期“以前”，电平值都是1</span>
+
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a<span class="token punctuation">[</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token comment">//断定@(posedge clk)a在连续3个时钟周期内都成立</span>
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a<span class="token punctuation">[</span><span class="token operator">*</span><span class="token number">1</span>：<span class="token number">3</span><span class="token punctuation">]</span><span class="token comment">//断定posedge clk)a在连续1~3个时钟周期内都成立</span>
+@ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> a<span class="token punctuation">[</span><span class="token operator">-></span><span class="token number">3</span><span class="token punctuation">]</span><span class="token comment">//断定@(posedge clk)a可以在非连续的3个时钟周期内成立</span></code></pre>
+
+<p>举例子：</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">property</span> ABC<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> tmp<span class="token punctuation">;</span>
+	@<span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token kernel-function property">$rose</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">,</span>tmp<span class="token operator">=</span>b<span class="token punctuation">)</span><span class="token operator">|-></span>##<span class="token function">4</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token punctuation">(</span>tmp<span class="token operator">*</span>tmp<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">##3</span> d<span class="token punctuation">[</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">endproperty</span></code></pre>
+
+<p>以上property说明：clk上升沿时，首先断定a信号由低变高，此时把b信号的值赋给tmp变量，在4个时钟周期后，断定信号c的值是4个周期前b^2+1，在延迟3个时钟周期，b信号会在接下来的3个时钟周期内都为真，再过三个周期，b信号会再来……</p>
+<p>如果以上都成立默认为断言成功。或者从一开始信号a没有上升沿，断言也成功</p>
+<h3 id="语法4：多时钟域联合断言"><a href="#语法4：多时钟域联合断言" class="headerlink" title="语法4：多时钟域联合断言"></a>语法4：多时钟域联合断言</h3><pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk1<span class="token punctuation">)</span> a<span class="token operator">|-></span> <span class="token number">##1</span> @<span class="token punctuation">(</span><span class="token keyword">posedge</span> clk2<span class="token punctuation">)</span> b</code></pre>
+
+<p>当<code>clk1</code>上升沿时，事件a发生（高电平），紧接着如果过来第二个时钟后面的<code>clk2</code>的上升沿，则b发生。<code>##1</code>在跨时钟时，不表示一个时钟周期，只表示等待最近的一个跨时钟事件，所以此时不能写成<code>##2</code></p>
+<p>但是可以写成：</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog">@<span class="token punctuation">(</span><span class="token keyword">posedge</span> clk1<span class="token punctuation">)</span> a<span class="token operator">|=></span> @ <span class="token punctuation">(</span><span class="token keyword">posedge</span> clk2<span class="token punctuation">)</span> b</code></pre>
+
+<h3 id="语法5：总线的断言函数"><a href="#语法5：总线的断言函数" class="headerlink" title="语法5：总线的断言函数"></a>语法5：总线的断言函数</h3><p>总线是很多跟bit线，共同表示一个数，SVA提供了多bit状态一起判断的函数</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog"><span class="token kernel-function property">$onehot</span><span class="token punctuation">(</span>BUS<span class="token punctuation">)</span><span class="token comment">//BUS中有且仅有1位为高，其他为低</span>
+<span class="token kernel-function property">$onehot0</span><span class="token punctuation">(</span>BUS<span class="token punctuation">)</span><span class="token comment">//BUS中有不超过1位为高，也可以全为低</span>
+<span class="token kernel-function property">$isunknown</span><span class="token punctuation">(</span>BUS<span class="token punctuation">)</span><span class="token comment">//BUS中存在高阻态或未知态</span>
+<span class="token function">countones</span><span class="token punctuation">(</span>BUS<span class="token punctuation">)</span><span class="token operator">==</span>n<span class="token comment">//BUS中有且仅有n bits为高，其他为低</span></code></pre>
+
+<h3 id="语法6：屏蔽不定态"><a href="#语法6：屏蔽不定态" class="headerlink" title="语法6：屏蔽不定态"></a>语法6：屏蔽不定态</h3><p>当信号被断言时，如果信号是未复位的不定态，无论如何断言，都会报告”断言失败“。为了不报告此类问题，可以屏蔽断言。</p>
+<p>比如，<code>@(posedge clk) (q==$past(d))</code>,当未复位的时候会报错，可以将其屏蔽：</p>
+<pre class="language-verilog" data-language="verilog"><code class="language-verilog">@<span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token keyword">disable</span> <span class="token function">iff</span><span class="token punctuation">(</span><span class="token operator">!</span>rst_n<span class="token punctuation">)</span> <span class="token punctuation">(</span>q<span class="token operator">==</span><span class="token kernel-function property">$past</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="语法7：断言覆盖率检测"><a href="#语法7：断言覆盖率检测" class="headerlink" title="语法7：断言覆盖率检测"></a>语法7：断言覆盖率检测</h3><pre class="language-verilog" data-language="verilog"><code class="language-verilog">name<span class="token punctuation">:</span> <span class="token keyword">cover</span> <span class="token function">poperty</span><span class="token punctuation">(</span>func_name<span class="token punctuation">)</span></code></pre>
+
+<h2 id="在modelsim中开启断言编译和显示功能"><a href="#在modelsim中开启断言编译和显示功能" class="headerlink" title="在modelsim中开启断言编译和显示功能"></a>在modelsim中开启断言编译和显示功能</h2><ul>
+<li><p>编译verilog代码时，按照<code>system verilog</code>进行编译</p>
+<pre class="language-nginx" data-language="nginx"><code class="language-nginx">vlog -sv anc.v</code></pre>
+</li>
+<li><p>仿真命令，加一个-assertdebug</p>
+<pre class="language-nginx" data-language="nginx"><code class="language-nginx">vsim -assertdebug =novopt testbench</code></pre>
+</li>
+<li><p>使用打开断言窗口的命令来查看断言成功与否</p>
+<pre class="language-nginx" data-language="nginx"><code class="language-nginx">view assertions</code></pre></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://crystal0q.github.io">Kiki Joe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://crystal0q.github.io/2025/02/19/SVA-GRAMMAR/">https://crystal0q.github.io/2025/02/19/SVA-GRAMMAR/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://crystal0q.github.io" target="_blank">kiki妙妙屋</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/">研究生</a><a class="post-meta__tags" href="/tags/EDA/">EDA</a><a class="post-meta__tags" href="/tags/SVA%E8%AF%AD%E6%B3%95/">SVA语法</a></div><div class="post_share"><div class="social-share" data-image="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/02/18/sharing/" title="sharing"><img class="cover" src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">sharing</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2025/01/15/note/" title="note"><img class="cover" src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-15</div><div class="title">note</div></div></a></div><div><a href="/2025/01/15/RTL-FT-SUV-FPV%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" title="RTL,FT,SUV,FPV之间的关系"><img class="cover" src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-15</div><div class="title">RTL,FT,SUV,FPV之间的关系</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Kiki Joe</div><div class="author-info__description">隐于喧嚣的静谧</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/crystal0q" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:1192977474@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SVA%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">SVA的位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AD%E8%A8%80%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">断言的格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%951%EF%BC%9A%E4%BF%A1%E5%8F%B7%EF%BC%88%E4%BA%8B%E4%BB%B6%EF%BC%89%E4%B9%8B%E9%97%B4%E7%9A%84%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E5%85%B3%E7%B3%BB"><span class="toc-number">3.1.</span> <span class="toc-text">语法1：信号（事件）之间的组合逻辑关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%952%EF%BC%9A%E5%9C%A8%E2%80%9C%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E2%80%9D%E4%B8%AD%E5%88%A4%E6%96%AD%E7%8B%AC%E7%AB%8B%E7%9A%84%E4%B8%80%E6%A0%B9%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%A1%8C%E4%B8%BA"><span class="toc-number">3.2.</span> <span class="toc-text">语法2：在“时序逻辑”中判断独立的一根信号的行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%953%EF%BC%9A%E5%9C%A8%E2%80%9C%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E2%80%9D%E4%B8%AD%E5%88%A4%E6%96%AD%E5%A4%9A%E4%B8%AA%E4%BA%8B%E4%BB%B6-%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%A1%8C%E4%B8%BA%E5%85%B3%E7%B3%BB"><span class="toc-number">3.3.</span> <span class="toc-text">语法3：在“时序逻辑”中判断多个事件&#x2F;信号的行为关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%954%EF%BC%9A%E5%A4%9A%E6%97%B6%E9%92%9F%E5%9F%9F%E8%81%94%E5%90%88%E6%96%AD%E8%A8%80"><span class="toc-number">3.4.</span> <span class="toc-text">语法4：多时钟域联合断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%955%EF%BC%9A%E6%80%BB%E7%BA%BF%E7%9A%84%E6%96%AD%E8%A8%80%E5%87%BD%E6%95%B0"><span class="toc-number">3.5.</span> <span class="toc-text">语法5：总线的断言函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%956%EF%BC%9A%E5%B1%8F%E8%94%BD%E4%B8%8D%E5%AE%9A%E6%80%81"><span class="toc-number">3.6.</span> <span class="toc-text">语法6：屏蔽不定态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%957%EF%BC%9A%E6%96%AD%E8%A8%80%E8%A6%86%E7%9B%96%E7%8E%87%E6%A3%80%E6%B5%8B"><span class="toc-number">3.7.</span> <span class="toc-text">语法7：断言覆盖率检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8modelsim%E4%B8%AD%E5%BC%80%E5%90%AF%E6%96%AD%E8%A8%80%E7%BC%96%E8%AF%91%E5%92%8C%E6%98%BE%E7%A4%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">在modelsim中开启断言编译和显示功能</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/02/19/SVA-GRAMMAR/" title="SVA-GRAMMAR"><img src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SVA-GRAMMAR"/></a><div class="content"><a class="title" href="/2025/02/19/SVA-GRAMMAR/" title="SVA-GRAMMAR">SVA-GRAMMAR</a><time datetime="2025-02-19T07:54:43.000Z" title="发表于 2025-02-19 15:54:43">2025-02-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/18/sharing/" title="sharing"><img src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sharing"/></a><div class="content"><a class="title" href="/2025/02/18/sharing/" title="sharing">sharing</a><time datetime="2025-02-18T09:57:17.000Z" title="发表于 2025-02-18 17:57:17">2025-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/25/daily-plan/" title="daily_plan"><img src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="daily_plan"/></a><div class="content"><a class="title" href="/2025/01/25/daily-plan/" title="daily_plan">daily_plan</a><time datetime="2025-01-25T01:28:49.000Z" title="发表于 2025-01-25 09:28:49">2025-01-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/23/%E5%81%87%E6%9C%9F%E5%AE%89%E6%8E%92/" title="假期安排"><img src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="假期安排"/></a><div class="content"><a class="title" href="/2025/01/23/%E5%81%87%E6%9C%9F%E5%AE%89%E6%8E%92/" title="假期安排">假期安排</a><time datetime="2025-01-23T09:20:11.000Z" title="发表于 2025-01-23 17:20:11">2025-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/15/note/" title="note"><img src="https://picture.gptkong.com/20240729/182633e287c2fd4a229bc5aefa169b1625.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="note"/></a><div class="content"><a class="title" href="/2025/01/15/note/" title="note">note</a><time datetime="2025-01-15T14:22:18.000Z" title="发表于 2025-01-15 22:22:18">2025-01-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Kiki Joe</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/gh/xiabo2/CDN@latest/fishes.js"></script><div class="aplayer no-destroy" data-id="12382041415" data-server="netease" data-mini="true" data-type="playlist" data-fixed="true" data-autoplay="true" data-lrcType="-1"> </div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
